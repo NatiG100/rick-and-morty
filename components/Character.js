@@ -3,7 +3,7 @@ import cn from 'classnames';
 import Image from 'next/image';
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 import { BsArrowRight } from 'react-icons/bs';
-const Character = () => {
+const Character = ({ character }) => {
     const darkMode = true;
     return (
         <div className={cn({
@@ -13,7 +13,7 @@ const Character = () => {
             <div style={{ borderRadius: "5px", height: "148px", border: "1px solid black", overflow: "hidden" }}>
                 <Image
                     alt="R and M"
-                    src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+                    src={character.image}
                     height={170}
                     width={148}
                 />
@@ -23,7 +23,7 @@ const Character = () => {
                     <h2 className={cn({
                         [charstyle.titleDark]: darkMode,
                         [charstyle.title]: !darkMode,
-                    })}>Rick Snachez</h2>
+                    })}>{character.name}</h2>
                     <div className={cn({
                         [charstyle.likeDark]: darkMode,
                         [charstyle.like]: !darkMode,
@@ -38,7 +38,7 @@ const Character = () => {
                         <p style={{ margin: "0px", marginTop: "4px" }} className={cn({
                             [charstyle.infoDark]: darkMode,
                             [charstyle.info]: !darkMode,
-                        })}><b>Earth (c--137)</b></p>
+                        })}><b>{character.origin}</b></p>
                     </div>
                     <div>
                         <p className={cn({
@@ -48,7 +48,7 @@ const Character = () => {
                         <p style={{ margin: "0px", marginTop: "4px" }} className={cn({
                             [charstyle.infoDark]: darkMode,
                             [charstyle.info]: !darkMode,
-                        })}><b>Human</b></p>
+                        })}><b>{character.species}</b></p>
                     </div>
                 </div>
                 <button className={cn({

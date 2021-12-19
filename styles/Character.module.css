@@ -84,3 +84,8 @@
 .buttonDark:hover{
     background-color: rgb(218, 199, 33)
 }
+.charlist{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

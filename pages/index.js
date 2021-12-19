@@ -1,10 +1,10 @@
 import Navbar from './../components/Navbar'
-import Character from './../components/Character'
+import CharacterList from './../components/CharacterList'
 const Home = () => {
     return (
         <>
             <Navbar />
-            <Character />
+            <CharacterList />
         </>
     );
 }
