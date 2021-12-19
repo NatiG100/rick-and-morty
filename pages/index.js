@@ -1,6 +1,9 @@
+import Navbar from './../components/Navbar'
 const Home = () => {
     return (
-        <h1>Rick and Morty app</h1>
+        <>
+            <Navbar />
+        </>
     );
 }
 export default Home;
