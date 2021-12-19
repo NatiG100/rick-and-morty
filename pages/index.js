@@ -1,12 +1,11 @@
 import Navbar from './../components/Navbar'
 import CharacterList from './../components/CharacterList'
-import Episode from '../components/Episode/Episode'
+import EpisodeListModal from '../components/Episode/EpisodeListModal'
 const Home = () => {
     return (
         <>
             <Navbar />
             <CharacterList />
-            <Episode />
         </>
     );
 }

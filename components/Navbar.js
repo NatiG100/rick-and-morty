@@ -4,7 +4,7 @@ import { MdDarkMode } from 'react-icons/md'
 import cn from 'classnames';
 import navstyle from './../styles/Navbar.module.css';
 const Navbar = () => {
-    const darkMode = true;
+    const darkMode = false;
     return (
         <>
             <div className={cn({

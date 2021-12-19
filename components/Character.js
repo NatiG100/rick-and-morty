@@ -3,8 +3,8 @@ import cn from 'classnames';
 import Image from 'next/image';
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 import { BsArrowRight } from 'react-icons/bs';
-const Character = ({ character }) => {
-    const darkMode = true;
+const Character = ({ character, onClickHandler }) => {
+    const darkMode = false;
     return (
         <div className={cn({
             [charstyle.containerDark]: darkMode,
@@ -51,7 +51,7 @@ const Character = ({ character }) => {
                         })}><b>{character.species}</b></p>
                     </div>
                 </div>
-                <button className={cn({
+                <button onClick={onClickHandler} className={cn({
                     [charstyle.buttonDark]: darkMode,
                     [charstyle.button]: !darkMode,
                 })}>See Episode <BsArrowRight /></button>

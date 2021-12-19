@@ -3,9 +3,10 @@ import { AiOutlineHeart, AiFillHeart, AiOutlineCloseCircle } from 'react-icons/a
 import { BsArrowRight } from 'react-icons/bs';
 import charstyle from './../../styles/Character.module.css';
 import cn from 'classnames';
-import Image from 'next/image'
-const Episode = () => {
-    const darkMode = true;
+import Image from 'next/image';
+import EpisodList from './EpisodList';
+const EpisodeListModal = ({ closeHandler }) => {
+    const darkMode = false;
     return (
         <>
             <div className={epsdstyles.backdrop}>
@@ -41,7 +42,7 @@ const Episode = () => {
                                 [epsdstyles.countDark]: darkMode,
                                 [epsdstyles.count]: !darkMode,
                             })}>40 Episodes</button>
-                            <div className={cn({
+                            <div onClick={closeHandler} className={cn({
                                 [epsdstyles.closeDark]: darkMode,
                                 [epsdstyles.close]: !darkMode,
                             })}>
@@ -49,9 +50,10 @@ const Episode = () => {
                             </div>
                         </div>
                     </div>
+                    <EpisodList />
                 </div>
             </div>
         </>
     );
 }
-export default Episode;
+export default EpisodeListModal;

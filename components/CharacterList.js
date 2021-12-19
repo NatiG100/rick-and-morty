@@ -1,5 +1,7 @@
 import Character from './Character'
 import charstyle from './../styles/Character.module.css';
+import { useState } from 'react'
+import EpisodeListModal from './Episode/EpisodeListModal';
 
 const CharacterList = () => {
     const characters = [
@@ -47,9 +49,18 @@ const CharacterList = () => {
         },
 
     ];
+    const [episodModalOpened, setEpisodModalOpened] = useState(false);
+    const modalOpenHandler = () => {
+        setEpisodModalOpened(true);
+    }
     return (
         <div className={charstyle.charlist}>
-            {characters.map(character => (<Character key={character.id} character={character} />))}
+            {episodModalOpened && <EpisodeListModal closeHandler={() => setEpisodModalOpened(false)} />}
+            {characters.map(character => (<Character
+                key={character.id}
+                character={character}
+                onClickHandler={modalOpenHandler}
+            />))}
         </div>
     );
 }
