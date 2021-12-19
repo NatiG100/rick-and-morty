@@ -1,0 +1,86 @@
+.container{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin:15px;
+    height:150px;
+    padding:5px;
+    width:370px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+.containerDark{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin:15px;
+    height:150px;
+    padding:5px;
+    width:370px;
+    border: 1px solid #000;
+    background-color: #131313;
+    border-radius: 10px;
+}
+.container:hover{
+    border:1px solid rgb(20, 107, 179);
+    box-shadow: 0px 0px 10px #0007;
+}
+.containerDark:hover{
+    border:1px solid rgb(20, 107, 179);
+    box-shadow: 0px 0px 10px #0007;
+}
+.title{
+    margin:0px;
+    font-weight: bold;
+    color:black;
+}
+.titleDark{
+    color:white;
+    margin:0px;
+}
+.like{
+    height:16px;
+}
+.likeDark{
+    height:16px;
+    color:white;
+}
+.like:hover{
+    color: rgb(214, 182, 39);
+}
+.likeDark:hover{
+    color: rgb(214, 182, 39);
+}
+.info{
+    margin: 0px;
+}
+.infoDark{
+    margin: 0px;
+    color:white;
+}
+.button{
+    width:120px;
+    background-color: rgb(196, 178, 21);
+    color:black;
+    border:none;
+    padding-top:8px;
+    padding-bottom: 8px;
+    border-radius: 4px;
+    align-self: flex-end;
+}
+.buttonDark{
+    width:120px;
+    background-color: rgb(196, 178, 21);
+    color:white;
+    padding-top:8px;
+    padding-bottom: 8px;
+    border:none;
+    border-radius: 4px;
+    align-self: flex-end;
+}
+.button:hover{
+    background-color: rgb(218, 199, 33)
+}
+.buttonDark:hover{
+    background-color: rgb(218, 199, 33)
+}
