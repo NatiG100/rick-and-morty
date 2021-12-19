@@ -2,7 +2,7 @@ import epsdstyles from './../../styles/Episode.module.css';
 import cn from 'classnames';
 import { MdSmartDisplay } from 'react-icons/md';
 import { FaCalendarAlt } from 'react-icons/fa';
-const Episode = ({ darkMode }) => {
+const Episode = ({ darkMode, episod }) => {
     return (
         <div className={cn({
             [epsdstyles.epsdcardDark]: darkMode,
@@ -11,7 +11,7 @@ const Episode = ({ darkMode }) => {
             <p className={cn({
                 [epsdstyles.titleDark]: darkMode,
                 [epsdstyles.title]: !darkMode,
-            })}><b>Pilot</b></p>
+            })}><b>{episod.name}</b></p>
             <div style={{ display: "flex", width: "100%" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "10px", width: "50%" }}>
                     <div style={{ color: "rgb(209, 193, 49)" }}>
@@ -21,7 +21,7 @@ const Episode = ({ darkMode }) => {
                         <p className={cn({
                             [epsdstyles.infoDark]: darkMode,
                             [epsdstyles.info]: !darkMode,
-                        })}><b>S01E01</b></p>
+                        })}><b>{episod.episode}</b></p>
                         <p className={cn({
                             [epsdstyles.infoDark]: darkMode,
                             [epsdstyles.info]: !darkMode,
@@ -36,7 +36,7 @@ const Episode = ({ darkMode }) => {
                         <p className={cn({
                             [epsdstyles.infoDark]: darkMode,
                             [epsdstyles.info]: !darkMode,
-                        })}><b>December 2, 2013</b></p>
+                        })}><b>{episod.air_date}</b></p>
                         <p className={cn({
                             [epsdstyles.infoDark]: darkMode,
                             [epsdstyles.info]: !darkMode,

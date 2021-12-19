@@ -37,7 +37,7 @@ const Character = ({ character, onClickHandler, darkMode }) => {
                         <p style={{ margin: "0px", marginTop: "4px" }} className={cn({
                             [charstyle.infoDark]: darkMode,
                             [charstyle.info]: !darkMode,
-                        })}><b>{character.origin}</b></p>
+                        })}><b>{character.origin.name}</b></p>
                     </div>
                     <div>
                         <p className={cn({
@@ -50,7 +50,7 @@ const Character = ({ character, onClickHandler, darkMode }) => {
                         })}><b>{character.species}</b></p>
                     </div>
                 </div>
-                <button onClick={onClickHandler} className={cn({
+                <button onClick={onClickHandler(character.id)} className={cn({
                     [charstyle.buttonDark]: darkMode,
                     [charstyle.button]: !darkMode,
                 })}>See Episode <BsArrowRight /></button>

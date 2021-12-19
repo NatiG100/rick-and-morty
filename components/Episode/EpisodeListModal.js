@@ -5,7 +5,7 @@ import charstyle from './../../styles/Character.module.css';
 import cn from 'classnames';
 import Image from 'next/image';
 import EpisodList from './EpisodList';
-const EpisodeListModal = ({ closeHandler, darkMode }) => {
+const EpisodeListModal = ({ closeHandler, darkMode, charId, character }) => {
     return (
         <>
             <div className={epsdstyles.backdrop}>
@@ -25,7 +25,7 @@ const EpisodeListModal = ({ closeHandler, darkMode }) => {
                             <div style={{ borderRadius: "23px", width: "45px", height: "45px", overflow: "hidden" }}>
                                 <Image
                                     alt="R and M"
-                                    src={"https://rickandmortyapi.com/api/character/avatar/6.jpeg"}
+                                    src={character.image}
                                     height={60}
                                     width={60}
                                 />
@@ -33,14 +33,14 @@ const EpisodeListModal = ({ closeHandler, darkMode }) => {
                             <h2 className={cn({
                                 [charstyle.titleDark]: darkMode,
                                 [charstyle.title]: !darkMode,
-                            })}>Rick Sanchez</h2>
+                            })}>{character.name}</h2>
                             <div className={epsdstyles.like}><AiOutlineHeart size={25} /></div>
                         </div>
                         <div style={{ height: "45px", display: "flex", alignItems: "center", gap: "10px" }}>
                             <button className={cn({
                                 [epsdstyles.countDark]: darkMode,
                                 [epsdstyles.count]: !darkMode,
-                            })}>40 Episodes</button>
+                            })}>{character.episode.length} Episodes</button>
                             <div onClick={closeHandler} className={cn({
                                 [epsdstyles.closeDark]: darkMode,
                                 [epsdstyles.close]: !darkMode,
@@ -49,7 +49,7 @@ const EpisodeListModal = ({ closeHandler, darkMode }) => {
                             </div>
                         </div>
                     </div>
-                    <EpisodList darkMode={darkMode} />
+                    <EpisodList charId={charId} darkMode={darkMode} />
                 </div>
             </div>
         </>
