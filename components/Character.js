@@ -10,7 +10,7 @@ const Character = ({ character }) => {
             [charstyle.containerDark]: darkMode,
             [charstyle.container]: !darkMode,
         })}>
-            <div style={{ borderRadius: "5px", height: "148px", border: "1px solid black", overflow: "hidden" }}>
+            <div style={{ borderRadius: "5px", height: "148px", overflow: "hidden" }}>
                 <Image
                     alt="R and M"
                     src={character.image}
