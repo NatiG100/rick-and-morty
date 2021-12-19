@@ -5,10 +5,14 @@ import { gql } from "@apollo/client";
 import { useState } from 'react';
 import client from './../apollo-client';
 import ClientOnly from './../utils/ClientOnly'
+import React from 'react';
 const Home = () => {
+
     const [darkMode, setDarkMode] = useState(false);
     const [searchString, setSearchString] = useState('');
+    
     return (
+
         <>
             <Navbar darkMode={darkMode} searchString={searchString} setSearchString={setSearchString} setDarkMode={setDarkMode} />
             <ClientOnly>

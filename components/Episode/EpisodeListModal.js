@@ -5,7 +5,12 @@ import charstyle from './../../styles/Character.module.css';
 import cn from 'classnames';
 import Image from 'next/image';
 import EpisodList from './EpisodList';
+import { useContext } from 'react';
+import { check } from './../Character';
+import { LikeContext } from './../CharacterList';
 const EpisodeListModal = ({ closeHandler, darkMode, charId, character }) => {
+    const { like, dislike, list } = useContext(LikeContext);
+    const liked = check(list, character.id);
     return (
         <>
             <div className={epsdstyles.backdrop}>
@@ -34,7 +39,9 @@ const EpisodeListModal = ({ closeHandler, darkMode, charId, character }) => {
                                 [charstyle.titleDark]: darkMode,
                                 [charstyle.title]: !darkMode,
                             })}>{character.name}</h2>
-                            <div className={epsdstyles.like}><AiOutlineHeart size={25} /></div>
+                            <div className={epsdstyles.like}>
+                                {liked ? <AiFillHeart size={25} /> : <AiOutlineHeart size={25} />}
+                            </div>
                         </div>
                         <div style={{ height: "45px", display: "flex", alignItems: "center", gap: "10px" }}>
                             <button className={cn({

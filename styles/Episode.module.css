@@ -3,9 +3,9 @@
     background-color: #0009;
     height:100%;
     width:100%;
-    position:absolute;
+    position:fixed;
     top:0px;
-    left:px;
+    left:0px;
     display:flex;
 }
 .epsdContDark{
