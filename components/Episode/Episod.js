@@ -2,8 +2,7 @@ import epsdstyles from './../../styles/Episode.module.css';
 import cn from 'classnames';
 import { MdSmartDisplay } from 'react-icons/md';
 import { FaCalendarAlt } from 'react-icons/fa';
-const Episode = () => {
-    const darkMode = false;
+const Episode = ({ darkMode }) => {
     return (
         <div className={cn({
             [epsdstyles.epsdcardDark]: darkMode,

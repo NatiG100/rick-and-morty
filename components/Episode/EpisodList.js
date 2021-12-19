@@ -1,7 +1,7 @@
 import Episod from './Episod'
 import epsdstyles from './../../styles/Episode.module.css';
 
-const EpisodList = () => {
+const EpisodList = ({ darkMode }) => {
     const episods = [
         {
             name: "Pilot",
@@ -37,7 +37,7 @@ const EpisodList = () => {
     ];
     return (
         <div className={epsdstyles.epsdList}>
-            {episods.map(episod => (<Episod key={episod.id} episod={episod} />))}
+            {episods.map(episod => (<Episod darkMode={darkMode} key={episod.id} episod={episod} />))}
         </div>
     );
 }

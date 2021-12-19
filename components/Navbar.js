@@ -1,10 +1,9 @@
 import Image from 'next/image';
 import { AiOutlineSearch } from 'react-icons/ai';
-import { MdDarkMode } from 'react-icons/md'
+import { MdDarkMode, MdLightMode } from 'react-icons/md'
 import cn from 'classnames';
 import navstyle from './../styles/Navbar.module.css';
-const Navbar = () => {
-    const darkMode = false;
+const Navbar = ({ darkMode, setDarkMode }) => {
     return (
         <>
             <div className={cn({
@@ -29,9 +28,12 @@ const Navbar = () => {
                         [navstyle.txtfld]: !darkMode
                     })} />
                 </div>
-                <div className={navstyle.darkMode}>
-                    <p style={{ height: "18px" }}>Dark Mode</p>
-                    <MdDarkMode />
+                <div onClick={() => setDarkMode((state) => (!state))} className={cn({
+                    [navstyle.darkModeDark]: darkMode,
+                    [navstyle.darkMode]: !darkMode,
+                })}>
+                    <p style={{ margin: "0px" }}>{darkMode ? "Light Mode" : "Dark Mode"}</p>
+                    {darkMode ? <MdLightMode /> : <MdDarkMode />}
                 </div>
             </div>
         </>

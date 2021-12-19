@@ -3,8 +3,7 @@ import cn from 'classnames';
 import Image from 'next/image';
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 import { BsArrowRight } from 'react-icons/bs';
-const Character = ({ character, onClickHandler }) => {
-    const darkMode = false;
+const Character = ({ character, onClickHandler, darkMode }) => {
     return (
         <div className={cn({
             [charstyle.containerDark]: darkMode,

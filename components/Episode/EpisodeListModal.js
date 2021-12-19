@@ -5,8 +5,7 @@ import charstyle from './../../styles/Character.module.css';
 import cn from 'classnames';
 import Image from 'next/image';
 import EpisodList from './EpisodList';
-const EpisodeListModal = ({ closeHandler }) => {
-    const darkMode = false;
+const EpisodeListModal = ({ closeHandler, darkMode }) => {
     return (
         <>
             <div className={epsdstyles.backdrop}>
@@ -50,7 +49,7 @@ const EpisodeListModal = ({ closeHandler }) => {
                             </div>
                         </div>
                     </div>
-                    <EpisodList />
+                    <EpisodList darkMode={darkMode} />
                 </div>
             </div>
         </>

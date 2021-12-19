@@ -3,7 +3,7 @@ import charstyle from './../styles/Character.module.css';
 import { useState } from 'react'
 import EpisodeListModal from './Episode/EpisodeListModal';
 
-const CharacterList = () => {
+const CharacterList = ({ darkMode }) => {
     const characters = [
         {
             image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
@@ -55,8 +55,9 @@ const CharacterList = () => {
     }
     return (
         <div className={charstyle.charlist}>
-            {episodModalOpened && <EpisodeListModal closeHandler={() => setEpisodModalOpened(false)} />}
+            {episodModalOpened && <EpisodeListModal darkMode={darkMode} closeHandler={() => setEpisodModalOpened(false)} />}
             {characters.map(character => (<Character
+                darkMode={darkMode}
                 key={character.id}
                 character={character}
                 onClickHandler={modalOpenHandler}

@@ -63,8 +63,26 @@
     color: #adadad;
 }
 .darkMode{
+    color:#444;
     display: flex;
     flex-direction: row-reverse;
-    justify-items: center;
+    align-items: center;
+    gap:10px;
     width:260px;
+    cursor:pointer;
+}
+.darkModeDark{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap:10px;
+    width:260px;
+    cursor:pointer;
+    color:#ddd
+}
+.darkMode:hover{
+    color:#080808
+}
+.darkModeDark:hover{
+    color:white;
 }
