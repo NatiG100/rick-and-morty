@@ -10,7 +10,7 @@ const Home = () => {
 
     const [darkMode, setDarkMode] = useState(false);
     const [searchString, setSearchString] = useState('');
-    
+
     return (
 
         <>
